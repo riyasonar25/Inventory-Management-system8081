@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login - Inventory System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1602526218859-6e8dcbf6e4b5') no-repeat center center fixed;
+            background-size: cover;
+        }
+        .login-container {
+            max-width: 500px;
+            margin-top: 10vh;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+        }
+        .brand-logo {
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="login-container">
+            <div class="text-center mb-4">
+                <img src="https://cdn-icons-png.flaticon.com/512/4727/4727496.png" alt="Logo" class="brand-logo mb-2">
+                <h3 class="text-primary">Gada Electronics Inventory System</h3>
+                <p class="text-muted"></p>
+            </div>
+
+            <!-- 🔒 Your Original Login Form Starts Here -->
+            <div class="card p-4 bg-light text-dark border-0">
+                <h4 class="text-center mb-3">Admin Login</h4>
+                <form th:action="@{/login}" method="post">
+                    <div class="mb-3">
+                        <label>Username</label>
+                        <input type="text" name="username" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label>Password</label>
+                        <input type="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="checkbox" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember Me</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                    <p th:if="${error}" class="text-danger mt-2" th:text="${error}"></p>
+                </form>
+                <div class="text-end mt-2">
+                    <a href="#" class="text-decoration-none small">Forgot Password?</a>
+                </div>
+            </div>
+            <!-- 🔒 Your Original Login Form Ends Here -->
+        </div>
+    </div>
+</body>
+</html>
