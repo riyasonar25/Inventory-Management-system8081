@@ -68,8 +68,9 @@ spring.jpa.hibernate.ddl-auto=update
 
 
 Run the project using:
-mvn spring-boot:run🌐 Application URL
+
+mvn spring-boot:run
+
+🌐 Application URL
 http://localhost:8081/login
-
-
 │ └── application.properties
